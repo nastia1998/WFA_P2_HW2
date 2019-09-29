@@ -1,0 +1,78 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+	controllerName="zles.zles_hw02.controller.NavBar_Table">
+	<App>
+		<pages>
+			<Page title="{i18n>titleNabTable}">
+				<headerContent>
+					<Button xmlns="sap.m" text="Back" id="button9" icon="sap-icon://navigation-left-arrow" press="action"
+						xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+						action:wiring="\{'press':\{'navigation':\{'routeName':'Inputs'\}\}\}"/>
+				</headerContent>
+				<content>
+					<VBox class="sapUiSmallMargin">
+						<HBox alignItems="Center">
+							<Button text="To 1" press="handleNav">
+								<layoutData>
+									<FlexItemData growFactor="1"/>
+								</layoutData>
+								<customData>
+									<core:CustomData key="target" value="p1"/>
+								</customData>
+							</Button>
+							<Button text="To 2" press="handleNav">
+								<layoutData>
+									<FlexItemData growFactor="1"/>
+								</layoutData>
+								<customData>
+									<core:CustomData key="target" value="p2"/>
+								</customData>
+							</Button>
+						</HBox>
+						<HBox>
+							<Select id="animationSelect">
+								<core:Item text="Slide animation" key="slide"/>
+								<core:Item text="Fade animation" key="fade"/>
+								<core:Item text="Flip animation" key="flip"/>
+								<core:Item text="Show animation" key="show"/>
+								<layoutData>
+									<FlexItemData growFactor="1"/>
+								</layoutData>
+							</Select>
+						</HBox>
+						<NavContainer id="navCon" width="98%" height="16em" class="navContainerControl sapUiSmallMarginBottom">
+							<Page id="p1" title="Computers">
+								<Table title="Computers" selectionMode="MultiToggle">
+									<columns>
+										<Column width="11rem">
+											<Label text="Computer ID"/>
+										</Column>
+										<Column width="11rem">
+											<Label text="Manufacturer"/>
+										</Column>
+										<Column width="11rem">
+											<Label text="Processor"/>
+										</Column>
+										<Column width="11rem">
+											<Label text="Hard Disk Size"/>
+										</Column>
+										<Column width="11rem">
+											<Label text="Number of Processor Cores"/>
+										</Column>
+									</columns>
+								</Table>
+								<footer>
+									<Toolbar><Button text="Action 1"/></Toolbar>
+								</footer>
+							</Page>
+							<Page id="p2" title="Page 2">
+								<footer>
+									<Toolbar><Button text="Action 2"/></Toolbar>
+								</footer>
+							</Page>
+						</NavContainer>
+					</VBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
